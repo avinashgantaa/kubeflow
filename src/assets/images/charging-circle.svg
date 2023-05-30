@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="charging-circle" transform="translate(-0.001 0.001)">
+    <g id="Group_443" data-name="Group 443" transform="translate(0.001 -0.001)">
+      <g id="Group_442" data-name="Group 442" transform="translate(0 0)">
+        <path id="Path_25" data-name="Path 25" d="M23.261,13.938a1.679,1.679,0,0,0-1.6,1.163A9.346,9.346,0,1,1,9.854,3.351a1.759,1.759,0,0,0,1.208-1.67,1.682,1.682,0,0,0-2.2-1.6A12.765,12.765,0,1,0,24.9,16.2a1.724,1.724,0,0,0-1.638-2.26Z" transform="translate(-0.001 0.001)" fill="#211f99"/>
+        <path id="Path_26" data-name="Path 26" d="M330.633,3.461a9.382,9.382,0,0,1,6.012,6,1.715,1.715,0,0,0,1.631,1.183h.035a1.677,1.677,0,0,0,1.6-2.192A12.8,12.8,0,0,0,331.69.212a1.7,1.7,0,0,0-2.218,1.613v.037A1.681,1.681,0,0,0,330.633,3.461Z" transform="translate(-314.989 -0.124)" fill="#211f99"/>
+      </g>
+    </g>
+  </g>
+</svg>

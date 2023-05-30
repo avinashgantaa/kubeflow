@@ -5,24 +5,120 @@
     top: 0;
     left: 0;
 }
-.pagelayout{
-    background-color: #F2F3F7;
+
+.pagelayout {
     height: 100%;
+    width: 100%;
+    background-color: #F2F3F7;
 }
-.sidenav{
+
+.sidenav {
     background-color: #211F9F;
-    height: 100vh;
+    height: 100%;
     background-image: url('../../assets/images/Group441.svg');
     background-repeat: no-repeat;
     background-position: center;
 }
-.jukshioimg{
-    transform: translate(50%,50%);
+.jukshioimgfiled,
+.photo,
+.line,
+.btnfield,
+.settingalign,
+.logoutfield
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.jimg{
+    margin-top: 30px;
+}
+
+.imagecapture{
+    margin-top: 15px;
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.welcomeback {
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.name {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.horizontalline{
+    margin-top: 30px;
+
+}
+
+.btnmodel {
+    background-color: #fff;
+    border: none;
+    padding: 12px;
+    color: #211F9F;
+    width: 60%;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+
+.chargingcircle {
+    float: left;
+}
+.settings, .logout{
+    padding: 12px;
+    color: #FFF;
+    width: 60%;
+    font-weight: 600;
+    margin-top: 30px;
+}
+.logout{
+    margin-top: 150px;
+}
+.settingimg,.logoutimg{
+    padding-right: 30px;
+}
+.modelheading{
+    color: #211F9F;
+    font-weight: 900;
+    margin-top: 30px;
+}
+.smallheading{
+    font-weight: 900;
+}
+.col-9{
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+.searchbox{
+    background-image: url('../../assets/images/loupe.svg');
+    background-repeat: no-repeat;
+    padding: 10px 50px;
+    background-position-y: 10px;
+    background-position-x: 10px;
+    border: none;
+    margin-top: 30px;
+}
+
 @media only screen and (max-width:1200px) {
-    .jukshioimg{
-        transform: translate(25%,50%);
- 
+    .imagecapture{
+        height: 100px;
+        width: 100px;
     }
-    
+    .btnmodel{
+        width: 80%;
+    }
+    .logout{
+        margin-top: 70px;
+    }
+
 }

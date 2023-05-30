@@ -12,8 +12,8 @@ export class SigninComponent {
   public email:any
   public password:any
   public details=[
-    {"email":"jukshio","password":"jukshio","name":"jukshio"},
-    {"email":"avinash","password":"avinash","name":"avinash"}
+    {"email":"admin@jukshio.com","password":"admin","name":"admin"},
+    {"email":"avinash@jukshio.com","password":"avinash","name":"avinash"}
   ]
   eyebutton(){
     this.showtext=!this.showtext
@@ -21,15 +21,17 @@ export class SigninComponent {
 
   signin() {
     let loginSuccessful = false;
+    let name="";
     for (let i = 0; i < this.details.length; i++) {
       if (this.email == this.details[i].email && this.password == this.details[i].password) {
         loginSuccessful = true;
+        name=this.details[i].name
         break; // Exit the loop if a match is found
       }
     }
     
     if (loginSuccessful) {
-      this.router.navigateByUrl('/model')
+      this.router.navigate(['/model',{name:name}])
     } else {
       alert("Login failed");
     }
