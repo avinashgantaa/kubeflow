@@ -1,0 +1,25 @@
+<div class="pagelayout">
+    <div class="row">
+        <div class="col-2">
+            <div class="sidenav">
+                <ul class="list-group">
+                    <li class="listgroupitem"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Sign In</a></li>
+                    <li class="listgroupitem"><a routerLink="/signup" routerLinkActive="active">Sign Up</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="sidebackground">
+                <div class="sidebgcolor">
+                    <img src="../../assets/images/Logo 10.png" class="logo10">
+                </div>
+
+            </div>
+        </div>
+        <div class="col-4">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+.pagelayout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+h5{
+    font-weight: bold;
+}
+.signinwithgoogle{
+    width: 100%;
+    font-weight: bold;
+    background-color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-image: url("../../assets/images/7123025_logo_google_g_icon.png");
+    background-position-x: 10px;
+    background-repeat: no-repeat;
+    background-size: 45px;
+}
+.linedivison{
+    display: flex;
+    gap: 20px;
+    color: #C2C0C0;
+}
+.linewidth{
+    width: 205px;
+}
+.emailfield,.password{
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+}
+.svg{
+    width: 25px;
+    height: 25px;
+    /* margin-top: -16px; */
+    transform: translate(-58%, -140%);
+    float: right;
+    opacity: 0.3;
+}
+.btnwidth{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: #211F99;
+    padding: 10px;
+}
+.txtcolor{
+    color: #211F99;
+    font-weight: 600;
+}
+@media only screen and (max-width:1200px) {
+    .linewidth{
+        width: 125px;
+    } 
+}
