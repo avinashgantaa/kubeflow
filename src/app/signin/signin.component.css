@@ -1,15 +1,24 @@
-.pagelayout{
+*{
+    font-family: poppins;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+.pagelayout {
+    height: 100%;
+    box-sizing: border-box;
+}
+.signinform{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    box-sizing: border-box;
 }
-
-h5{
+h5 {
     font-weight: bold;
 }
-.signinwithgoogle{
+
+.signinwithgoogle {
     width: 100%;
     font-weight: bold;
     background-color: #FFF;
@@ -21,20 +30,25 @@ h5{
     background-repeat: no-repeat;
     background-size: 45px;
 }
-.linedivison{
+
+.linedivison {
     display: flex;
     gap: 20px;
     color: #C2C0C0;
 }
-.linewidth{
+
+.linewidth {
     width: 205px;
 }
-.emailfield,.password{
+
+.emailfield,
+.password {
     padding: 10px;
     font-weight: 600;
     border: none;
 }
-.svg{
+
+.svg {
     width: 25px;
     height: 25px;
     /* margin-top: -16px; */
@@ -42,7 +56,8 @@ h5{
     float: right;
     opacity: 0.3;
 }
-.btnwidth{
+
+.btnwidth {
     width: 100%;
     border: none;
     border-radius: 5px;
@@ -50,12 +65,45 @@ h5{
     background-color: #211F99;
     padding: 10px;
 }
-.txtcolor{
+
+.txtcolor {
     color: #211F99;
     font-weight: 600;
 }
+
+.sidebackground {
+    background-image: url('../../assets/images/Group441.svg');
+    background-position: center;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebgcolor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #211F99;
+    height: 100vh;
+    width: 70%;
+}
+
+.logo10 {
+    height: 15rem;
+    width: 15rem;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
 @media only screen and (max-width:1200px) {
-    .linewidth{
+    .linewidth {
         width: 125px;
-    } 
+    }
+
+    .logo10 {
+        height: 12rem;
+        width: 12rem;
+    }
 }

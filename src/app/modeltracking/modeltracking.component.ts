@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 
 @Component({
   selector: 'app-modeltracking',
@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./modeltracking.component.css']
 })
 export class ModeltrackingComponent {
-  constructor(public routrer:ActivatedRoute){}
+  constructor(public routrer:ActivatedRoute, public route:Router){}
   public name=""
   ngOnInit(){
     this.routrer.paramMap.subscribe(
@@ -15,6 +15,10 @@ export class ModeltrackingComponent {
         next:(data:any)=>{return this.name=data.get("name")}
       }
     )
+  }
+  logout(){
+    this.route.navigateByUrl('/')
+
   }
 
 }

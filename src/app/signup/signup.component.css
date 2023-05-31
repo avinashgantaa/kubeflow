@@ -1,0 +1,43 @@
+*{
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+.pagelayout{
+    background-color: #F2F3F7;
+    height: 100%;
+}
+.sidebg{
+    background-image: url('../../assets/images/Group441.svg');
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logowithbg{
+    width: 70%;
+    background-color: #211F99;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logoj {
+    height: 15rem;
+    width: 15rem;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 30px;
+}
+@media only screen and (max-width:1200px) {
+    .linewidth {
+        width: 125px;
+    }
+    .logoj {
+        height: 12rem;
+        width: 12rem;
+    }
+}
