@@ -33,23 +33,191 @@
                 </div>
             </div>
         </div>
-        <div class="col-9">
-            <div class="row">
-                <div class="col-4">
-                    <h3 class="modelheading">Model Tracking</h3>
-                    <h6 class="smallheading">Golden Model Analysis</h6>
-
+        <div class="col-9 p-4">
+            <div class="row first">
+                <div class="col-3">
+                    <h5 class="model">Model Tracking</h5>
+                    <div class="smallheading">Golden Model Analysis</div>
+                </div>
+                <div class="col-9">
+                    <input type="search" class="form-control searchbox" placeholder="search">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-4" style="padding: 0px 20px 0px 0px;">
+                    <div ngbDropdown class="appearance">
+                        <button type="button" class="buttonStyle dropdown-toggle" ngbDropdownToggle>
+                            {{trainingsessionName?.SessionID || 'Select Training Session'}}
+                            <img src="../../assets/images/Icon-ionic-ios-arrow-down.svg">
+                        </button>
+                        <div ngbDropdownMenu class="menu">
+                            <button ngbDropdownItem class="dropdownitem" *ngFor="let option of trainingids"
+                                (click)="selectOneOption(option)">{{option}}</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-8">
-                    <input type="search" class="form-control searchbox" placeholder="Search">
+                    <div class="traininginfo">
+                        <h5 class="infoheading">Training Session Details</h5>
+                        <img src="../../assets/images/Icon material-zoom-out-map.svg" class="zoomout">
+
+                    </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col-4">
-                    
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="bottombg">
+                        <div class="row">
+                            <div class="col-9">
+                                <h5 class="thresholdheading">Threshold Analysis</h5>
+                                <div class="row mt-3">
+                                    <div class="col-4 p-2">
+                                        <div class="bgline">
+                                            <h6 class="modelscoretitle text-center">Model Score Distribution</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 p-2">
+                                        <div class="bgslider">
+                                            <h6 class="tweakheading text-center">Tweak Threshold</h6>
+                                            <div class="mt-4">
+                                                <h6 class="zero mt-2">0</h6>
+                                                <h6 class="one mt-2">1</h6>
+                                                <span class="slider">
+                                                    <input type="range" min="0" max="1" step="0.1" value="0.5"
+                                                        (input)="onSliderChange($event)">
+                                                </span>
+                                            </div>
+                                            <div class="tweakfield mt-4">
+                                                <button class="tweakfieldbutton">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div ngbDropdown>
+                                    <button type="button" class="modelButton dropdown-toggle" ngbDropdownToggle>
+                                        <span>
+                                            {{ selectedModelName ||'select Model' }}
+
+                                        </span>
+                                        <img src="../../assets/images/Icon-ionic-ios-arrow-down.svg">
+                                    </button>
+                                    <div ngbDropdownMenu class="menu1">
+                                        <button ngbDropdownItem (click)="selectModel(model1, 'Model 1')"
+                                            class="dropdownitem1">Model 1</button>
+                                        <button ngbDropdownItem (click)="selectModel(model2, 'Model 2')"
+                                            class="dropdownitem1">Model 2</button>
+                                        <button ngbDropdownItem (click)="selectModel(model3, 'Model 3')"
+                                            class="dropdownitem1">Model 3</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7 p-2">
+                                <div class="bglinecircles">
+                                    <div>
+                                        <div class="progressbar1">
+                                            <div class="value1">0%</div>
+                                        </div>
+                                        <h6 class="namesofprogress">Accuracy</h6>
+                                    </div>
+                                    <div>
+                                        <div class="progressbar2">
+                                            <div class="value2">0%</div>
+                                        </div>
+                                        <h6 class="namesofprogress">Real Accuracy</h6>
+                                    </div>
+                                    <div>
+                                        <div class="progressbar3">
+                                            <div class="value3">0%</div>
+                                        </div>
+                                        <h6 class="namesofprogress">Fake Accuracy</h6>
+                                    </div>
+                                </div>
+                                <div class="bottomline mt-4">
+                                    <div class="bglinefts">
+                                        <h6 class="text-center ft1">FT1</h6>
+                                        <div class="ft1field m-1 p-2">
+                                            <div class="ft1bg">
+                                                <h6 class="blue text-center">FP</h6>
+                                                <h5 class="text-center p-1 orbitron">99%</h5>
+                                            </div>
+                                            <div class="ft1bg">
+                                                <h6 class="blue text-center">TN</h6>
+                                                <h5 class="text-center p-1 orbitron">99%</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bglinefts">
+                                        <h6 class="text-center ft1">FT2</h6>
+                                        <div class="ft1field m-1 p-2">
+                                            <div class="ft1bg">
+                                                <h6 class="blue text-center">FP</h6>
+                                                <h5 class="text-center p-1 orbitron">99%</h5>
+                                            </div>
+                                            <div class="ft1bg">
+                                                <h6 class="blue text-center">TN</h6>
+                                                <h5 class="text-center p-1 orbitron">99%</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bglinefts">
+                                        <h6 class="text-center ft1">RT1</h6>
+                                        <div class="ft1field m-1 p-2">
+                                            <div class="ft1bg">
+                                                <h6 class="blue text-center">TP</h6>
+                                                <h5 class="text-center p-1 orbitron">99%</h5>
+                                            </div>
+                                            <div class="ft1bg">
+                                                <h6 class="blue text-center">FN</h6>
+                                                <h5 class="text-center p-1 orbitron">99%</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            <div class="col-5 p-2">
+                                <div class="bglinesrow">
+                                    <h6 class="text-center cmheading">Confusion Matrix</h6>
+                                    <h5 class="text-center pclassheading mt-4">Predicted Class</h5>
+                                    <div class="complete">
+                                        <h6 class="actualclass">Actual Class</h6>
+                                     <div class="divwidth">
+                                        <div class="lower">
+                                            <div class="whiteone">
+                                                <h6 class="tpstyle">TP</h6>
+                                                <h4 class="text-center p-1 orbitron">99%</h4>
+                                            </div>
+                                            <div class="whiteone">
+                                                <h6 class="tpstyle">FN</h6>
+                                                <h4 class="text-center p-1 orbitron">99%</h4>
+                                            </div>
+                                        </div>
+                                        <div class="lower mt-4">
+                                            <div class="whiteone">
+                                                <h6 class="tpstyle">FP</h6>
+                                                <h4 class="text-center p-1 orbitron">99%</h4>
+                                            </div>
+                                            <div class="whiteone">
+                                                <h6 class="tpstyle">TN</h6>
+                                                <h4 class="text-center p-1 orbitron">99%</h4>
+                                            </div>
+                                        </div>
+                                     </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-8"></div>
             </div>
+
         </div>
+
     </div>
 </div>

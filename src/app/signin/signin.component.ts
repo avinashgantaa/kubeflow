@@ -11,6 +11,7 @@ export class SigninComponent {
   showtext:boolean=false
   public email:any
   public password:any
+  public name=""
   public details=[
     {"email":"admin@jukshio.com","password":"admin","name":"admin"},
     {"email":"avinash@jukshio.com","password":"avinash","name":"avinash"}
@@ -21,17 +22,17 @@ export class SigninComponent {
 
   signin() {
     let loginSuccessful = false;
-    let name="";
     for (let i = 0; i < this.details.length; i++) {
       if (this.email == this.details[i].email && this.password == this.details[i].password) {
         loginSuccessful = true;
-        name=this.details[i].name
+        this.name=this.details[i].name
         break; // Exit the loop if a match is found
       }
     }
     
     if (loginSuccessful) {
-      this.router.navigate(['/model',{name:name}])
+      sessionStorage.setItem("name",this.name)
+      this.router.navigate(['/model'])
     } else {
       alert("Login failed");
     }

@@ -3,6 +3,7 @@
     left: 0px;
     margin: 0px;
     padding: 0px;
+    font-family: poppins;
 }
 .pagelayout{
     background-color: #F2F3F7;
@@ -32,6 +33,57 @@
     border-radius: 10px;
     padding: 30px;
 }
+h5{
+    font-weight: bold;
+}
+.signupwithG{
+    background-image: url('../../assets/images/7123025_logo_google_g_icon.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    width: 100%;
+    border: none;
+    background-color: #FFF;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.spantext{
+    position: relative;
+    top: 18px;
+    font-weight: bold;
+}
+.googleimg{
+    float: left;
+}
+.horizontalline{
+    width: 270px;
+}
+.orclass{
+    padding: 0px 28px;
+    color: #C2C0C0;
+}
+.signupform{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.emailfield{
+    border: none;
+    letter-spacing: 1px;
+}
+.svg {
+    height: 40px;
+    width: 40px;
+    float: right;
+    transform: translate(-50%, -120%);
+    opacity: 0.4;
+}
+.signupbtn{
+    width: 100%;
+    border: none;
+    background-color: #211F99;
+    color: #FFF;
+    border-radius: 5px;
+}
 @media only screen and (max-width:1200px) {
     .linewidth {
         width: 125px;
@@ -39,5 +91,8 @@
     .logoj {
         height: 12rem;
         width: 12rem;
+    }
+    .horizontalline{
+        width: 134px;
     }
 }

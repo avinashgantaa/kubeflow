@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+  showtext=false
+  eyebutton(){
+    this.showtext=!this.showtext
+  }
 
 }

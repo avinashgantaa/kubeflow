@@ -12,21 +12,19 @@
         <div class="col-6 signinform">
        <div>
         <h5>Sign In</h5>
-        <button class="signinwithgoogle mt-1">
+        <button class="signinwithgoogle mt-2 p-3">
             Sign in with Google
         </button>
-        <div class="linedivison mt-1">
+        <div class="linedivison mt-4">
             <img src="../../assets/images/Line 1.svg" class="linewidth">
             <span>or</span>
             <img src="../../assets/images/Line 1.svg" class="linewidth">
         </div>
-        <div class="mt-2">
-            <h5>Email Address</h5>
-            <input type="text" class="form-control emailfield" [(ngModel)]="email">
-        </div>
-        <div class="mt-4">
-            <h5>Password</h5>
-            <input [type]="showtext?'text':'password'" class="form-control password" [(ngModel)]="password">
+        <h5 class="mt-4">Email Address</h5>
+            <input type="text" class="form-control emailfield mt-2 p-3" [(ngModel)]="email">
+            <h5 class="mt-4">Password</h5>
+        <div>
+            <input [type]="showtext?'text':'password'" class="form-control password mt-2 p-3" [(ngModel)]="password">
             <svg xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512" class="svg" (click)="eyebutton()" *ngIf="showtext"> 
                 <path
@@ -40,7 +38,7 @@
 
 
         </div>
-        <button class="btnwidth mt-2" (click)="signin()">Sign In</button>
+        <button class="btnwidth mt-4 p-3" (click)="signin()">Sign In</button>
         <div class="forgotpwd mt-3 text-center txtcolor">Forgot Password?</div>
        </div>
         </div>

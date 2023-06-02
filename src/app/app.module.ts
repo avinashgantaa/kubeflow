@@ -7,6 +7,7 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { ModeltrackingComponent } from './modeltracking/modeltracking.component';
+import { HttpClientModule } from '@angular/common/http';
 const routes:Routes=[
   {path:'',loadChildren:()=>import('./login/login.module').then(posres=>posres.LoginModule)}
 ]
@@ -18,6 +19,7 @@ const routes:Routes=[
     ModeltrackingComponent
   ],
   imports: [
+    HttpClientModule,
     FormsModule,
     BrowserModule,
     NgbModule,

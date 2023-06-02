@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 30px;
 }
 h5 {
     font-weight: bold;
@@ -24,11 +25,10 @@ h5 {
     background-color: #FFF;
     border: none;
     border-radius: 5px;
-    padding: 10px;
     background-image: url("../../assets/images/7123025_logo_google_g_icon.png");
-    background-position-x: 10px;
     background-repeat: no-repeat;
-    background-size: 45px;
+    letter-spacing: 1px;
+
 }
 
 .linedivison {
@@ -43,18 +43,17 @@ h5 {
 
 .emailfield,
 .password {
-    padding: 10px;
-    font-weight: 600;
     border: none;
+    width: 100%;
+    letter-spacing: 1px;
 }
 
 .svg {
-    width: 25px;
-    height: 25px;
-    /* margin-top: -16px; */
-    transform: translate(-58%, -140%);
+    height: 40px;
+    width: 40px;
     float: right;
-    opacity: 0.3;
+    transform: translate(-50%, -120%);
+    opacity: 0.4;
 }
 
 .btnwidth {
