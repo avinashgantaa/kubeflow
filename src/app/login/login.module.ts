@@ -5,6 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { SigninComponent } from '../signin/signin.component';
 import { SignupComponent } from '../signup/signup.component';
 import { ModeltrackingComponent } from '../modeltracking/modeltracking.component';
+import { ModeltrackerComponent } from '../modeltracker/modeltracker.component';
+import { OtpverificationComponent } from '../otpverification/otpverification.component';
+import { FinalComponent } from '../final/final.component';
+import { FrloginComponent } from '../frlogin/frlogin.component';
+import { WebcamModule } from 'ngx-webcam';
 const routes: Routes = [
   {
     path: "", component: LoginComponent, children: [
@@ -12,7 +17,17 @@ const routes: Routes = [
       { path: 'signup', component: SignupComponent }
     ]
   },
-  {path:'model',component:ModeltrackingComponent}
+  {path:'frlogin',component:FrloginComponent},
+  { path: 'model', component: ModeltrackingComponent },
+  { path: 'modeltracker', component: ModeltrackerComponent },
+  { path: 'otpverification', component: OtpverificationComponent },
+  {
+    path: 'final', component: FinalComponent,
+    children: [
+      { path: '', component: ModeltrackingComponent },
+      { path: 'modeltracker', component: ModeltrackerComponent }
+    ]
+  }
 ]
 
 @NgModule({
@@ -20,6 +35,7 @@ const routes: Routes = [
     LoginComponent
   ],
   imports: [
+    WebcamModule,
     CommonModule,
     RouterModule.forChild(routes)
   ]

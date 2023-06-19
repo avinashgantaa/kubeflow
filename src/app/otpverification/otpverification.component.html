@@ -1,0 +1,25 @@
+<div class="pagelayout">
+    <div class="row">
+        <div class="col-3">
+            <div class="sidenav">
+                <img src="../../assets/images/Group 519.svg" class="jukshio">
+
+            </div>
+        </div>
+        <div class="col-9">
+            <h4 class="text-center heading">Verify OTP</h4>
+           <div class="centeralign">
+            <div class="formgroup">
+                <h5 class="label">Please enter OTP</h5>
+                <input type="text" class="form-control otpfield" placeholder="OTP" [(ngModel)]="otp">
+                <div class="lastrow">
+                    <h6 class="resend">Resend</h6>
+                    <button class="verifybutton" (click)="submit()">Verify</button>
+                </div>
+                    <h6 class="text-center resend">{{errormessage}}</h6>
+
+            </div>
+           </div>
+        </div>
+    </div>
+</div>

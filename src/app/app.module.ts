@@ -8,6 +8,11 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { ModeltrackingComponent } from './modeltracking/modeltracking.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ModeltrackerComponent } from './modeltracker/modeltracker.component';
+import { OtpverificationComponent } from './otpverification/otpverification.component';
+import { FinalComponent } from './final/final.component';
+import { FrloginComponent } from './frlogin/frlogin.component';
+import { WebcamModule } from 'ngx-webcam';
 const routes:Routes=[
   {path:'',loadChildren:()=>import('./login/login.module').then(posres=>posres.LoginModule)}
 ]
@@ -16,9 +21,14 @@ const routes:Routes=[
     AppComponent,
     SigninComponent,
     SignupComponent,
-    ModeltrackingComponent
+    ModeltrackingComponent,
+    ModeltrackerComponent,
+    OtpverificationComponent,
+    FinalComponent,
+    FrloginComponent
   ],
   imports: [
+    WebcamModule,
     HttpClientModule,
     FormsModule,
     BrowserModule,

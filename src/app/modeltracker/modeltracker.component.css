@@ -1,0 +1,315 @@
+*{
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+}
+.pagelayout{
+    background-color: #F2F3F7;
+    height: 100%;
+    width: 100%;
+}
+.navbackground{
+    background-color: #211F9F;
+    height: 100%;
+    width: 90%;
+}
+.navitem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0px;
+    
+}
+.deepreality{
+    width: 75%;
+}
+.avatar{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+.linepart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modeltrackingbtnfield{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+.modeltrackingbtn{
+    padding: 15px;
+    width: 75%;
+    background-color: #FFF;
+    border: none;
+    border-radius: 5px;
+    color: #211F9F;
+    font-weight: 600;
+}
+.chargingcircle{
+    float: left;
+}
+.settingsfield{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+}
+.settingsbtn{
+    padding: 15px;
+    width: 75%;
+    background-color: #211F9F;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    font-weight: 600;   
+}
+.settings{
+    float: left;
+}
+.Logoutfield{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+    margin-top: 56%;
+}
+.logoutbtn{
+    padding: 15px;
+    width: 75%;
+    background-color: #211F9F;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    font-weight: 600;  
+}
+.modeltrackrow{
+    padding: 10px 0px;
+    gap: 8rem;
+}
+.modelheading{
+    color: #211F9F;
+}
+.searchfield{
+    background-image: url('../../assets/images/loupe.svg');
+    background-repeat: no-repeat;
+    padding: 10px 60px;
+    background-position-x: 10px;
+    background-position-y: 10px;
+    border: none;
+}
+.buttonStyle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #211F9F;
+    color: #FFF;
+    border-radius: 5px;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.traininginfo {
+    background-color: #FFF;
+    padding: 20px 0px 20px 20px;
+    border-radius: 5px;
+}
+
+.infoheading {
+    font-weight: 600;
+    display: inline;
+    color: #211F9F;
+
+}
+
+.zoomout {
+    float: right;
+    padding: 0px 20px;
+}
+.secondrow{
+    padding: 10px 0px;
+}
+
+.greensubmit{
+    background-color: #00BE29;
+    padding: 15px;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+.adjust{
+    padding: 0px 15px;
+}
+.mainbgcolor{
+    background-color: #FFF;
+}
+.grphicalpart{
+    padding: 10px 0px 15px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.linebgcolor{
+    background-color: #F2F3F7;
+    padding-bottom: 10px;
+}
+.modelButton {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #211F9F;
+    color: #FFF;
+    float: right;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu{
+    width: 100%;
+    padding: 15px;
+    background-color: #FFF;
+}
+.dropdownitem {
+    padding: 5px 0px;
+    color: #211F9F;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+
+.menu1 {
+    width: 100%;
+    padding: 15px;
+    background-color: #F2F3F7;
+}
+
+.dropdownitem1 {
+    padding: 5px 0px;
+    color: #211F9F;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+.mainrow{
+    padding: 15px 0px;
+}
+.graphsrow{
+    padding: 15px;
+}
+.bargraphpart{
+    background-color: #F2F3F7;
+    padding: 10px;
+
+}
+.rightbg{
+    background-color: #F2F3F7;
+    padding: 0px 0px 110px 0px;
+}
+.static{
+    padding: 10px 0px 0px 15px;
+}
+.complete {
+    display: flex;
+    align-items: center;
+}
+.actualclass {
+    color: #211F9F;
+    display: inline-block;
+    transform: rotate(-90deg);
+}
+.divwidth {
+    width: 70%;
+}
+.lower {
+    display: flex;
+    align-items: center;
+    justify-content: normal;
+    gap: 10px;
+}
+
+.whiteone {
+    background-color: #FFF;
+    width: 47%;
+}
+.tpstyle {
+    background-color: #211F9F;
+    color: #FFF;
+    display: inline-block;
+    padding: 5px 20px;
+}
+.orbitron {
+    color: #211F9F;
+    font-family: orbitron;
+    font-weight: 600;
+}
+.buttonsrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0px;
+    gap: 15px;
+}
+.analyst{
+    border: none;
+    background-color: #211F9F;
+    color: #FFF;
+    padding: 15px 70px;
+    border-radius: 5px;
+}
+.multymodel{
+    border: none;
+    background-color: #211F9F;
+    color: #FFF;
+    border-radius: 5px; 
+    padding: 15px;
+}
+.submitform{
+    border: none;
+    background-color: #00BE29;
+    color: #FFF;
+    border-radius: 5px; 
+    padding: 15px 30px;
+}
+.alignments{
+    height: 90px;
+    overflow-y: scroll;
+    padding-right: none;
+}
+.alignments::-webkit-scrollbar{
+    width: 5px;
+}
+.alignments::-webkit-scrollbar-thumb{
+    background-color: #211F9F;
+    border-radius: 10px;
+}
+.alignments::-webkit-scrollbar-track{
+    background-color: #FFF;
+}
+.model{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modelscontent{
+    background-color: #FFF;
+    width: 50%;
+    height: 50%;
+    padding: 15px;
+
+}
+.zoomalignments{
+    padding: 30px 0px;
+}

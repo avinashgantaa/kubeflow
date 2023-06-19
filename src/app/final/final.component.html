@@ -1,0 +1,132 @@
+<div class="pagelayout">
+    <div class="row">
+        <div class="col-9">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="col-3 thirdcol">
+            <div class="bgcolor">
+                <div class="summary">
+                    <div>
+                        <h5 class="summaryheading">Summary</h5>
+                        <h6>Total Tracking</h6>
+                    </div>
+                    <img src="../../assets/images/Group 467.svg">
+                </div>
+                <div class="summarytype">
+                    <img src="../../assets/images/Group 459.svg" alt="">
+                    <div>
+                        <div class="p-1">
+                            <h6>Completed</h6>
+                            <h6 style="font-weight: 600;">{{Completed+"%"}}</h6>
+                            <div class="progressbar">
+                                <div class="progress" [style.width.%]="Completed"></div>
+                            </div>
+                        </div>
+                        <div class="p-1">
+                            <h6>In progress</h6>
+                            <h6 style="font-weight: 600;">{{inprogress+'%'}}</h6>
+                            <div class="progressbar">
+                                <div class="inprogress" [style.width.%]="inprogress"></div>
+                            </div>
+                        </div>
+                        <div class="p-1">
+                            <h6>Yet to start</h6>
+                            <h6 style="font-weight: 600;">{{yettostart+'%'}}</h6>
+                            <div class="progressbar">
+                                <div class="yettostart" [style.width.%]="yettostart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="bluebgcolor">
+                <h5 class="status">Status</h5>
+                <div class="height">
+                    <div class="paddingbutton">
+                        <button class="buttons" (click)="datasetdownload()">
+                            <div class="alignments">
+                                <div class="buttonstyle">1</div>
+                                <h6 class="buttonname">Dataset Download</h6>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="paddingbutton">
+                        <button class="buttons" (click)="modeltraining()">
+                            <div class="alignments">
+                                <div class="redbuttonstyle">2</div>
+                                <h6 class="redbuttonname">Model Training</h6>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="paddingbutton">
+                        <button class="buttons">
+                            <div class="alignments">
+                                <div class="buttonstyle">3</div>
+                                <h6 class="buttonname">Upload Level-1 Models</h6>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="paddingbutton">
+                        <button class="buttons">
+                            <div class="alignments">
+                                <div class="yellowbuttonstyle">4</div>
+                                <h6 class="yellowbuttonname">Golden Data Simulation</h6>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="paddingbutton">
+                        <button class="buttons">
+                            <div class="alignments">
+                                <div class="buttonstyle">5</div>
+                                <h6 class="buttonname">Golden Data Analysis</h6>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="paddingbutton">
+                        <button class="buttons">
+                            <div class="alignments">
+                                <div class="redbuttonstyle">6</div>
+                                <h6 class="redbuttonname">Platinum Data Simulation</h6>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="paddingbutton">
+                        <button class="buttons">
+                            <div class="alignments">
+                                <div class="buttonstyle">7</div>
+                                <h6 class="buttonname">Platinum Data Analysis</h6>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="paddingbutton">
+                        <button class="buttons">
+                            <div class="alignments">
+                                <div class="yellowbuttonstyle">8</div>
+                                <h6 class="yellowbuttonname">1 Day Data Simulation</h6>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="paddingbutton">
+                        <button class="buttons">
+                            <div class="alignments">
+                                <div class="buttonstyle">9</div>
+                                <h6 class="buttonname">1 Day Data Simulation Analysis</h6>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="paddingbutton">
+                        <button class="buttons">
+                            <div class="alignments">
+                                <div class="redbuttonstyle">10</div>
+                                <h6 class="redbuttonname">Model Deployment</h6>
+                            </div>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

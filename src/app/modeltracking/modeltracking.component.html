@@ -3,13 +3,13 @@
         <div class="col-3">
             <div class="sidenav">
                 <div class="jukshioimgfiled">
-                    <img src="../../assets/images/Group 507.svg" class="jimg">
+                    <img src="../../assets/images/Group 507.svg">
                 </div>
                 <div class="photo">
-                    <div class="imagecapture"></div>
+                    <img [src]="previewimage" class="avatar">
                 </div>
-                <div class="welcomeback">Welcome Back,</div>
-                <h4 class="name">{{name}}</h4>
+                <h6 class="text-center text-light">Welcome Back,</h6>
+                <h4 class="text-center text-light p-4" style="font-weight: 600;">{{name}}</h4>
                 <div class="line">
                     <img src="../../assets/images/Line 1.svg" class="horizontalline">
                 </div>
@@ -19,31 +19,31 @@
                         Model Tracking
                     </button>
                 </div>
-                <div class="settingalign">
-                    <div class="settings">
+                <div class="settingfield">
+                    <button class="settings">
                         <img src="../../assets/images/settings.svg" class="settingimg">
-                        <span>Settings</span>
-                    </div>
+                        Settings
+                    </button>
                 </div>
                 <div class="logoutfield">
-                    <div class="logout" (click)="logout()">
+                    <button class="logout" (click)="logout()">
                         <img src="../../assets/images/Group 466.svg" class="logoutimg">
                         Log Out
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
         <div class="col-9 p-4">
             <div class="row first">
                 <div class="col-3">
-                    <h5 class="model">Model Tracking</h5>
+                    <h5 class="modelheading">Model Tracking</h5>
                     <div class="smallheading">Golden Model Analysis</div>
                 </div>
                 <div class="col-9">
                     <input type="search" class="form-control searchbox" placeholder="search">
                 </div>
             </div>
-            <div class="row mt-3">
+            <div class="row">
                 <div class="col-4" style="padding: 0px 20px 0px 0px;">
                     <div ngbDropdown class="appearance">
                         <button type="button" class="buttonStyle dropdown-toggle" ngbDropdownToggle>
@@ -59,13 +59,13 @@
                 <div class="col-8">
                     <div class="traininginfo">
                         <h5 class="infoheading">Training Session Details</h5>
-                        <img src="../../assets/images/Icon material-zoom-out-map.svg" class="zoomout">
-
+                        <img src="../../assets/images/Icon material-zoom-out-map.svg" class="zoomout" (click)="zoomfn()">
+                        <pre *ngIf="trainingsessionName" class="alignments">{{trainingsessionName|json}}</pre>
                     </div>
 
                 </div>
             </div>
-            <div class="row mt-3">
+            <div class="row first">
                 <div class="col">
                     <div class="bottombg">
                         <div class="row">
@@ -75,6 +75,7 @@
                                     <div class="col-4 p-2">
                                         <div class="bgline">
                                             <h6 class="modelscoretitle text-center">Model Score Distribution</h6>
+                                            <svg height="140" width="210" id="d3chart" class="d3chart"></svg>
                                         </div>
                                     </div>
                                     <div class="col-8 p-2">
@@ -89,14 +90,14 @@
                                                 </span>
                                             </div>
                                             <div class="tweakfield mt-4">
-                                                <button class="tweakfieldbutton">Submit</button>
+                                                <button class="tweakfieldbutton" (click)="submitmodel()">Submit</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-3">
-                                <div ngbDropdown>
+                                <div ngbDropdown class="modeldropdown">
                                     <button type="button" class="modelButton dropdown-toggle" ngbDropdownToggle>
                                         <span>
                                             {{ selectedModelName ||'select Model' }}
@@ -178,7 +179,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
 
                             </div>
                             <div class="col-5 p-2">
@@ -187,28 +188,28 @@
                                     <h5 class="text-center pclassheading mt-4">Predicted Class</h5>
                                     <div class="complete">
                                         <h6 class="actualclass">Actual Class</h6>
-                                     <div class="divwidth">
-                                        <div class="lower">
-                                            <div class="whiteone">
-                                                <h6 class="tpstyle">TP</h6>
-                                                <h4 class="text-center p-1 orbitron">99%</h4>
+                                        <div class="divwidth">
+                                            <div class="lower">
+                                                <div class="whiteone">
+                                                    <h6 class="tpstyle">TP</h6>
+                                                    <h4 class="text-center p-1 orbitron">99%</h4>
+                                                </div>
+                                                <div class="whiteone">
+                                                    <h6 class="tpstyle">FN</h6>
+                                                    <h4 class="text-center p-1 orbitron">99%</h4>
+                                                </div>
                                             </div>
-                                            <div class="whiteone">
-                                                <h6 class="tpstyle">FN</h6>
-                                                <h4 class="text-center p-1 orbitron">99%</h4>
+                                            <div class="lower mt-4">
+                                                <div class="whiteone">
+                                                    <h6 class="tpstyle">FP</h6>
+                                                    <h4 class="text-center p-1 orbitron">99%</h4>
+                                                </div>
+                                                <div class="whiteone">
+                                                    <h6 class="tpstyle">TN</h6>
+                                                    <h4 class="text-center p-1 orbitron">99%</h4>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="lower mt-4">
-                                            <div class="whiteone">
-                                                <h6 class="tpstyle">FP</h6>
-                                                <h4 class="text-center p-1 orbitron">99%</h4>
-                                            </div>
-                                            <div class="whiteone">
-                                                <h6 class="tpstyle">TN</h6>
-                                                <h4 class="text-center p-1 orbitron">99%</h4>
-                                            </div>
-                                        </div>
-                                     </div>
                                     </div>
                                 </div>
                             </div>
@@ -221,3 +222,24 @@
 
     </div>
 </div>
+<div class="model" *ngIf="!zoomstatus">
+    <div class="modelscontent">
+        <h5 class="infoheading">Training Session Details</h5>
+        <img src="../../assets/images/Icon material-zoom-out-map.svg" class="zoomout" (click)="zoomfn()">
+        <pre *ngIf="trainingsessionName" class="zoomalignments">{{trainingsessionName|json}}</pre>
+    </div>
+ </div>
+
+<ng-template [ngIf]="alertmessage">
+    <div class="model" *ngIf="abcd">
+        <div class="modelcontent">
+            <div>
+                <h4 class="text-danger">{{alertmessage}}</h4>
+                <div class="mt-4 okbuttonfield">
+                    <button (click)="ok()" class="okbutton">ok</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</ng-template>

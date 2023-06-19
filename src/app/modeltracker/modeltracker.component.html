@@ -1,0 +1,166 @@
+<div class="pagelayout">
+    <div class="row">
+        <div class="col-3">
+            <div class="navbackground">
+                <div class="navitem">
+                    <img src="../../assets/images/Logo 9.svg" class="deepreality">
+                </div>
+                <div class="navitem">
+                    <img [src]="previewimage" class="avatar">
+                </div>
+                <h6 class="text-center text-light">Welcome Back,</h6>
+                <h4 class="text-center text-light p-2" style="font-weight: 600;">{{name}}</h4>
+                <div class="linepart p-4">
+                    <img src="../../assets/images/Line 1.svg" width="80%">
+                </div>
+                <div class="modeltrackingbtnfield">
+                    <button class="modeltrackingbtn">
+                        <img src="../../assets/images/charging-circle.svg" class="chargingcircle">
+                        Model Tracking</button>
+                </div>
+                <div class="settingsfield">
+                    <button class="settingsbtn">
+                        <img src="../../assets/images/settings.svg" class="settings">
+                        Settings</button>
+                </div>
+                <div class="Logoutfield">
+                    <button class="logoutbtn" (click)="logout()">
+                        <img src="../../assets/images/Group 466.svg" class="settings">
+                        Log Out</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-9 p-4">
+            <div class="modeltrackrow d-flex">
+                <div>
+                    <h4 class="modelheading" style="font-weight: 600;">Model Tracking</h4>
+                    <h6 style="font-weight: 600;">Model Comparison</h6>
+                </div>
+                <div>
+                    <input type="search" class="form-control searchfield" placeholder="Search">
+                </div>
+            </div>
+            <div class="row secondrow">
+                <div class="col-4" style="padding: 0px 20px 0px 0px;">
+                    <div ngbDropdown class="appearance">
+                        <button type="button" class="buttonStyle dropdown-toggle" ngbDropdownToggle>
+                            {{trainingsessionName?.SessionID || 'Select Training Session'}}
+                            <img src="../../assets/images/Icon-ionic-ios-arrow-down.svg">
+                        </button>
+                        <div ngbDropdownMenu class="menu">
+                            <button ngbDropdownItem class="dropdownitem" *ngFor="let option of trainingids"
+                                (click)="selectOneOption(option)">{{option}}</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="traininginfo">
+                        <h5 class="infoheading">Training Session Details</h5>
+                        <img src="../../assets/images/Icon material-zoom-out-map.svg" class="zoomout" (click)="zoomfn()">
+                        <pre *ngIf="trainingsessionName" class="alignments">{{trainingsessionName|json}}</pre>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mainrow">
+                <div class="col-3">
+                    <div ngbDropdown class="modeldropdown">
+                        <button type="button" class="modelButton dropdown-toggle" ngbDropdownToggle>
+                            <span>
+                                {{ selectedModelName ||'select Multiple Models' }}
+
+                            </span>
+                            <img src="../../assets/images/Icon-ionic-ios-arrow-down.svg">
+                        </button>
+                        <div ngbDropdownMenu class="menu1">
+                            <button ngbDropdownItem (click)="selectModel(model1, 'Model 1')" class="dropdownitem1">Model
+                                1</button>
+                            <button ngbDropdownItem (click)="selectModel(model2, 'Model 2')" class="dropdownitem1">Model
+                                2</button>
+                            <button ngbDropdownItem (click)="selectModel(model3, 'Model 3')" class="dropdownitem1">Model
+                                3</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 adjust">
+                    <button class="greensubmit">Submit</button>
+                </div>
+            </div>
+            <div class="mainbgcolor">
+                <div class="row graphsrow">
+                    <div class="col-8">
+                        <div class="grphicalpart">
+                            <div class="linebgcolor">
+                                <h6 class="text-center" style="color: #211F9F; padding: 10px;">Accuracies Plot</h6>
+                                <svg height="120" width="200" class="d3chart"></svg>
+
+                            </div>
+                            <div class="linebgcolor">
+                                <h6 class="text-center" style="color: #211F9F; padding: 10px;">Real Accuracies Plot</h6>
+                                <svg height="120" width="200" class="d3chart"></svg>
+
+                            </div>
+                            <div class="linebgcolor">
+                                <h6 class="text-center" style="color: #211F9F; padding: 10px;">Fake Accuracies Plot</h6>
+                                <svg height="120" width="200" class="d3chart"></svg>
+                            </div>
+                        </div>
+                        <div class="bargraphpart">
+                            <h6 class="text-center" style="color: #211F9F; padding: 10px;">Model Real/Fake Type Analysis</h6>
+                            <svg height="200" width="600" id="bar"></svg>
+                        </div>
+                    </div>
+                    <div class="col-4 static">
+                        <div class="rightbg">
+                            <h6 class="text-center" style="color: #211F9F; padding: 10px;">Confusion Matrix</h6>
+                            <h4 class="text-center" style="color: #211F9F; padding: 90px 15px 15px 15px;">Predicted Class</h4>
+                            <div class="complete">
+                                <h6 class="actualclass">Actual Class</h6>
+                                <div class="divwidth">
+                                    <div class="lower">
+                                        <div class="whiteone">
+                                            <h6 class="tpstyle">TP</h6>
+                                            <h4 class="text-center p-1 orbitron">99%</h4>
+                                        </div>
+                                        <div class="whiteone">
+                                            <h6 class="tpstyle">FN</h6>
+                                            <h4 class="text-center p-1 orbitron">99%</h4>
+                                        </div>
+                                    </div>
+                                    <div class="lower mt-4">
+                                        <div class="whiteone">
+                                            <h6 class="tpstyle">FP</h6>
+                                            <h4 class="text-center p-1 orbitron">99%</h4>
+                                        </div>
+                                        <div class="whiteone">
+                                            <h6 class="tpstyle">TN</h6>
+                                            <h4 class="text-center p-1 orbitron">99%</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="buttonsrow">
+                            <button class="analyst">Analyst</button>
+                            <button class="multymodel">Select Multiple Models</button>
+                            <button class="submitform" (click)="routetofinal()">Submit</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="model" *ngIf="!zoomstatus">
+    <div class="modelscontent">
+        <h5 class="infoheading">Training Session Details</h5>
+        <img src="../../assets/images/Icon material-zoom-out-map.svg" class="zoomout" (click)="zoomfn()">
+        <pre *ngIf="trainingsessionName" class="zoomalignments">{{trainingsessionName|json}}</pre>
+    </div>
+ </div>

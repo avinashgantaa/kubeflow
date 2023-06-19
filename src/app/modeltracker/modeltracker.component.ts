@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Models } from '../models';
-import * as d3 from 'd3';
+import * as d3 from 'd3'
 import { DomSanitizer } from '@angular/platform-browser';
+
 @Component({
-  selector: 'app-modeltracking',
-  templateUrl: './modeltracking.component.html',
-  styleUrls: ['./modeltracking.component.css']
+  selector: 'app-modeltracker',
+  templateUrl: './modeltracker.component.html',
+  styleUrls: ['./modeltracker.component.css']
 })
-export class ModeltrackingComponent implements OnInit {
-  constructor(public router: Router, public trainingSession: HttpClient, public csv: HttpClient,public modeltracker:Router,public image:HttpClient,
-    public sanitize:DomSanitizer) { }
+export class ModeltrackerComponent {
+  constructor(public router: Router, public trainingSession: HttpClient, public csv: HttpClient, public image:HttpClient,public sanitize:DomSanitizer) { }
   public previewimage:any
   ngOnInit() {
     this.getTrainingsessions()
@@ -26,7 +26,7 @@ export class ModeltrackingComponent implements OnInit {
       }
     )
   }
-  name=sessionStorage.getItem("name")
+  public name=sessionStorage.getItem("name")
   public trainingsessionUrl = 'https://ma.vishwamcorp.com/v1/get_training_sessions'
   public trainingids: any[] = []
   public trainingSessions: any = []
@@ -51,17 +51,22 @@ export class ModeltrackingComponent implements OnInit {
   public svg: any
   public height: any
   public width: any
-  public margin = 30
+  public margin=20
   public margin2=50
   public xaxis: any
   public yaxis: any
   public zoomstatus:boolean=true
+  routetofinal(){
+    this.router.navigate(['/final'])
+  }
   zoomfn(){
     this.zoomstatus=!this.zoomstatus
   }
   getlinechart() {
-    let id=document.getElementById('d3chart') as HTMLElement
-    this.svg=d3.select(id)
+    let id=document.getElementsByClassName('d3chart')
+for (let i = 0; i < id.length; i++) {
+  let element = id[i] as HTMLElement;
+  this.svg=d3.select(element)
     this.height=this.svg.attr('height')-this.margin
     this.width=this.svg.attr('width')-this.margin2
     this.xaxis=d3.scaleLinear().range([0,this.width])
@@ -78,76 +83,40 @@ export class ModeltrackingComponent implements OnInit {
     let line=d3.line().x((d:any,i:any)=>this.xaxis(this.xData[i])).y((d:any)=>this.yaxis(d))
     this.svg.selectAll('.line').remove()
     this.svg.append('path').attr('class','line').datum(this.counts).attr('d',line).attr('fill','none').attr('stroke','#211F9F').attr('transform','translate(30,10)')
+}
+    
   }
-  public thresholdstatus=false
-  public alertmessage!:string
-  public alertstatus!:boolean
-  public abcd=true
-  ok(){
-   this.abcd=false
+  getbarchart() {
+    let id = document.getElementById("bar") as HTMLElement;
+    this.svg = d3.select(id);
+    this.height = this.svg.attr('height') - this.margin;
+    this.width = this.svg.attr('width') - this.margin;
+  
+    this.xaxis = d3.scaleBand().range([0, this.width]).domain(this.xData.map((d) => d.toString())).padding(0.5);
+    this.svg.selectAll('.xdata').remove()
+    this.svg.append('g').attr('class','xdata').call(d3.axisBottom(this.xaxis)).attr('transform', 'translate(30,180)');
+  
+    this.yaxis = d3.scaleLinear().range([this.height, 0]);
+    this.yaxis.domain([d3.min(this.counts.map((d) => d)), d3.max(this.counts.map((d) => d))]);
+    this.svg.selectAll('.ydata').remove()
+    this.svg.append('g').attr('class','ydata').call(d3.axisLeft(this.yaxis).ticks(5)).attr('transform', 'translate(30,0)');
+    this.svg.selectAll('.bar').remove();
+    this.svg.selectAll('.bar').data(this.counts).enter().append('rect')
+      .attr('class', 'bar')
+      .attr('x', (d: any, i: number) => this.xaxis(this.xData[i].toString()))
+      .attr('y', (d: any) => this.yaxis(d))
+      .attr('width', this.xaxis.bandwidth())
+      .attr('height', (d: any) => this.height - this.yaxis(d))
+      .attr('fill', '#211F9F')
+      .attr('transform', 'translate(30,0)');
   }
-  submitmodel(){
-    this.abcd = true;
-    if(this.thresholdstatus==true){
-      this.modeltracker.navigateByUrl('/modeltracker')
-    }
-    else{
-      this.alertmessage="Please select a model"
-    }
-  }
-
+ 
   selectModel(url: any, model: any) {
-    this.thresholdstatus=true
     this.counts = []
     this.predictionscores = []
     this.modelpath = url
     this.selectedModelName = model
     this.getmodel();
-    this.circularplot()
-
-  }
-  onSliderChange(event: any) {
-    this.sliderValue = event.target.value
-    this.getmodel()
-  }
-  circularplot() {
-    let progressbar1: any = document.querySelector('.progressbar1')
-    let value1: any = document.querySelector('.value1')
-    let progressbar2: any = document.querySelector('.progressbar2')
-    let value2: any = document.querySelector('.value2')
-    let progressbar3: any = document.querySelector('.progressbar3')
-    let value3: any = document.querySelector('.value3')
-
-    let accuracystarting = 1
-    let clearaccuracy = setInterval(() => {
-      accuracystarting += 1;
-      progressbar1.style.background = `conic-gradient(#211F9F ${accuracystarting * 3.6}deg,#FFF 0deg)`
-      value1.innerHTML = `${accuracystarting}%`
-      if (accuracystarting == this.accuracy) {
-        clearInterval(clearaccuracy)
-
-      }
-    })
-
-    let realaccurayStarting = 1;
-    let clearRealAccuracy = setInterval(() => {
-      realaccurayStarting += 1
-      progressbar2.style.background = `conic-gradient(#211F9F ${realaccurayStarting * 3.6}deg, #FFF 0deg)`
-      value2.innerHTML = `${realaccurayStarting}%`
-      if (realaccurayStarting == this.realaccuracy) {
-        clearInterval(clearRealAccuracy)
-      }
-    })
-
-    let fakeaccuracyStarting = 1
-    let fakeaccuracyClear = setInterval(() => {
-      fakeaccuracyStarting += 1
-      progressbar3.style.background = `conic-gradient(#211F9F ${fakeaccuracyStarting * 3.6}deg, #FFF 0deg)`
-      value3.innerText = `${fakeaccuracyStarting}%`
-      if (fakeaccuracyStarting == this.fakeaccuracy) {
-        clearInterval(fakeaccuracyClear)
-      }
-    })
   }
   getmodel() {
     this.models = []
@@ -193,6 +162,7 @@ export class ModeltrackingComponent implements OnInit {
 
           console.log(this.counts)
           this.getlinechart()
+          this.getbarchart()
 
           let nooftp = this.models.filter(e => e.ConfusionMatrix === 'TP')
           this.tpCount = nooftp.length
@@ -244,4 +214,6 @@ export class ModeltrackingComponent implements OnInit {
 
   }
 
+  
 }
+

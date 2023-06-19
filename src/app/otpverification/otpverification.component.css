@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    top: 0;
+    left: 0;
+    padding: 0;
+    font-family: poppins;
+}
+.pagelayout{
+    background-color: #F2F3F7;
+    height: 100%;
+}
+.sidenav{
+    background-color: #211F9F;
+    height: 100vh;
+    background-image: url('../../assets/images/Group441.svg');
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.jukshio{
+    padding: 15px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    border-radius: 5px;
+}
+.heading{
+    font-weight: 600;
+    color: #211F9F;
+    padding: 75px;
+}
+.formgroup{
+    background-color: #FFF;
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+}
+.centeralign{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.otpfield{
+    padding: 10px;
+    letter-spacing: 5px;
+}
+.label{
+    padding: 10px 0px;
+}
+.lastrow{
+    padding: 26px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.resend{
+    color: #211F9F;
+}
+.verifybutton{
+    background-color: #211F9F;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    padding: 10px 20px;
+}
+
