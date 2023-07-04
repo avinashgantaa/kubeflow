@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="194.058" height="210.171" viewBox="0 0 194.058 210.171">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_51" data-name="Path 51" d="M194.058,0,0,64.562q81.088,72.805,162.177,145.609Q178.117,105.086,194.058,0Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_519" data-name="Group 519" transform="translate(1496 -4620)">
+    <g id="Group_489" data-name="Group 489" transform="translate(-1496 4620)" clip-path="url(#clip-path)">
+      <rect id="Rectangle_393" data-name="Rectangle 393" width="279.788" height="274.159" transform="translate(-92.259 155.398) rotate(-59.303)" fill="#fff"/>
+    </g>
+    <g id="Group_517" data-name="Group 517" transform="translate(-1420.198 4643.793)">
+      <path id="Path_52" data-name="Path 52" d="M143.623,98.226a30.159,30.159,0,0,1-32.172,3.7c-13.188-6.647-17.115-21.7-15.871-31.3.105-.817.236-1.5.341-1.981-.081-.5-.205-1.158-.4-1.912-2.1-8.2-10.338-20.09-23.269-20.275C58.8,46.263,45.909,59.77,47.792,76.435c.154,5.114,1.288,20.176,12.628,32.885,13.959,15.643,37.495,21.125,56.947,13.312,16.118-6.476,23.875-19.855,26.255-24.407" transform="translate(-47.608 3.717)" fill="#211f99"/>
+      <path id="Path_53" data-name="Path 53" d="M103.924,14.968c-9.513-.444-18.293,5.224-19.969,13.23v74.568c2.183,6.781,9.427,11.645,17.75,12.026,9.084.417,17.546-4.594,19.969-12.026V28.2c-1.5-7.334-9-12.822-17.75-13.23m-1.11,39.143a16.367,16.367,0,1,1,16.366-16.366,16.366,16.366,0,0,1-16.366,16.366" transform="translate(-26.084 -14.944)" fill="#211f99"/>
+    </g>
+    <g id="Group_518" data-name="Group 518" transform="translate(-1358.276 4651.769)">
+      <path id="Path_60" data-name="Path 60" d="M116.219,34.813a14.86,14.86,0,1,1-14.86-14.86,14.861,14.861,0,0,1,14.86,14.86" transform="translate(-86.499 -19.953)" fill="#fff"/>
+      <path id="Path_61" data-name="Path 61" d="M14.86,0A14.86,14.86,0,1,1,0,14.86,14.86,14.86,0,0,1,14.86,0Z" transform="translate(0 0)" fill="#211f99"/>
+    </g>
+  </g>
+</svg>
